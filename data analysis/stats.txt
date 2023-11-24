@@ -1,0 +1,7 @@
+RateBeer <= 17/20
+110364 beers
+22155 reviewers
+
+BeerAdvocate  <= 4/5
+66055 beers
+30286 reviewers

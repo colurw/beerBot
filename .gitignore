@@ -1,0 +1,11 @@
+raw data/ratebeer2.json
+raw data/beeradvocate2.json
+test.py
+test2.py
+training data
+models/svd*.pkl
+.venv
+test3.py
+models/umap*.pkl
+test4.py
+models/p_umap*

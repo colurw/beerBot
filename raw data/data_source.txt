@@ -1,0 +1,17 @@
+from: https://cseweb.ucsd.edu/~jmcauley/datasets.html
+
+
+Learning attitudes and attributes from multi-aspect reviews
+Julian McAuley, Jure Leskovec, Dan Jurafsky
+International Conference on Data Mining (ICDM), 2012
+https://cseweb.ucsd.edu/~jmcauley/pdfs/icdm12.pdf
+
+
+From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews
+Julian McAuley, Jure Leskovec
+WWW, 2013
+https://cseweb.ucsd.edu/~jmcauley/pdfs/www13.pdf
+
+
+
+
