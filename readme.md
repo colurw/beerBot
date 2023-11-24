@@ -1,20 +1,20 @@
-# BeerBot
+# beerBot
 
-Is a pintelligent recommendation alegorithm* that uses data scraped from BeerAdvocate.com to suggest novel beers based on a user's favourites.
+Is a pintelligent* recommendation alegorithm* that uses data scraped from BeerAdvocate.com to suggest novel beers based on a user's favourites.
 
-* <sub><sup>Nice one ChatGPT, but I'll stick with 'BeerBot' thank you.</sub></sup>
+*<sub><sup>Nice one ChatGPT, but I'll stick with 'BeerBot' thank you.</sub></sup>
 
-### 1_parse_json.py
+## 1_parse_json.py
 
 Parses json data scraped from BeerAdvocate.com and RateBeer.com.  Each user's highest-scoring beers are added to a list in a dictionary, with the user's name as its key.
 
 Only the index number of each beer is saved to the dictionary, so a second dictionary is created, which maps the index numbers to their names.
 
-### 2_analyse_data.py
+## 2_analyse_data.py
 
 Discovers statistics from the data, to help choose which dataset to use.  BeerAdvocate's was deemed most suitable.
 
-### 3_exploratory_factor_analysis.py
+## 3_exploratory_factor_analysis.py
 
 Uses Kernel Principal Component Analysis to produce a scree plot showing the cumulative variance explained by each extra dimension in the data.
 
@@ -22,7 +22,7 @@ There are 77,000 beers in the dataset, which is too many dimensions for a neural
 
 The scree plot shows 384 dimensions are enough to capture 95% of the variance in the data.
 
-### 4_train_decomposers.py
+## 4_train_decomposers.py
 
 Trains a Truncated Singular Value Decomposition (T-SVD) model to reduce the number of dimensions in the data from ~77,000 to 384.  T-SVD is suitable for decomposing sparse data - but as a linear method, roughly analogous to matrix factorisation, it may be possible to improve on its performance with more advanced techniques.
 
@@ -34,20 +34,20 @@ Parametric-UMAP aims to solve this problem by combining the graph approach of UM
 
 In reality, the decoder learns that just by guessing 'zero' for each one-hot feature, it can _almost_ perfectly recompose the original extremely sparse vector.  Meaning no beers get recommended.  Implementing a better-suited loss function (based on cosine distance or the Sørensen–Dice coefficient) may improve performance.
 
-### 5_create_training_data.py
+## 5_create_training_data.py
 
 Turns the dictionary of each user's highest-scoring beers into a one-hot array (x_data) then randomly removes some beers to use as the targets that the neural network will attempt to learn (y_data).
 
 This process is repeated several times, with different beers being selected each time.  This multiplies the amount of training data available.
 
-### 6_train_recommender.py
+## 6_train_recommender.py
 
 Defines a neural network and trains it to recognise the missing favourite beers of each user.
 
 A work in progress. The training graph loss plot shows the model is under-fitting and requires more training or possibly a wider/deeper neural network. It also might benefit from a higher learning rate, and more training data.
 
-![image](https://github.com/colurw/beer_bot/assets/66322644/65dd2385-149b-40a4-b7c3-b0fddaa8b217)
+![image](https://github.com/colurw/beerBot/assets/66322644/c8e2c78a-9086-413a-9f8d-fd0830b22298)
 
-### 7_get_recommendations.py
+## 7_get_recommendations.py
 
 Searches for the best matches in the 'beer_dict' dictionary with the user's favourite beers.  Uses the returned indices to create a one-hot vector, which is then decomposed using T-SVD, then transformed by the neural network into a probability distribution describing the 'missing' favourite beers.  This vector is recomposed back into its original high-dimension space, then the matching names are looked up in 'beer_dict' dictionary.
