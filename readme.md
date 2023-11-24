@@ -1,4 +1,4 @@
-# BeerBot
+# beerBot
 
 Is a pintelligent* recommendation alegorithm* that uses data scraped from BeerAdvocate.com to suggest novel beers based on a user's favourites.
 
