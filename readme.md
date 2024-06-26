@@ -2,7 +2,7 @@
 
 Is a pintelligent* recommendation alegorithm* that uses data scraped from BeerAdvocate.com to suggest novel beers based on a user's favourites.
 
-A work in progress...
+An experiment / work in progress...
 
 *<sub><sup>Nice one ChatGPT, but I'll stick with 'BeerBot' thank you.</sub></sup>
 
