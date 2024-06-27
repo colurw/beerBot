@@ -46,7 +46,7 @@ This process is repeated several times, with different beers being selected each
 
 Defines a neural network and trains it to recognise the missing favourite beers of each user.
 
-A work in progress. The (awful) training graph plot shows the model is under-fitting and requires more training or possibly a wider/deeper neural network. It also might benefit from a higher learning rate, and more training data...  Or, more likely, a reworking of the algorithm to one based on natural language processing.
+A work in progress. The training graph plot shows the model is not working as intended.  A reworking of the algorithm to one based on natural language processing is likely a better approach.
 
 ![image](https://github.com/colurw/beerBot/assets/66322644/c8e2c78a-9086-413a-9f8d-fd0830b22298)
 
